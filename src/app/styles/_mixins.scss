@@ -1,0 +1,16 @@
+$breakpoint-mobile: 320px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1200px;
+
+@mixin respond($breakpoint, $direction: min) {
+    @if ($direction == "min") {
+        @media (min-width: #{$breakpoint}) {
+            @content;
+        }
+    } @else {
+        @media (max-width: #{$breakpoint - 0.02px}) {
+            // Account for fractional widths
+            @content;
+        }
+    }
+}
