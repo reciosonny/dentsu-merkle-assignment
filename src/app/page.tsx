@@ -5,8 +5,9 @@ import { hackerNewsAPI } from "./services/hackerNewsService";
 
 export default async function Home() {
     const data = await hackerNewsAPI();
+    const sortedData = data.sort((a, b) => a.score - b.score);
 
-    const featuredArticle: IArticle = data[0];
+    const featuredArticle: IArticle = sortedData[0];
 
     return (
         <main className="home">
@@ -18,7 +19,7 @@ export default async function Home() {
                 <h1>Top Stories</h1>
 
                 <div className="article-content">
-                    {data.slice(1).map((i, idx) => (
+                    {sortedData.slice(1).map((i, idx) => (
                         <Article
                             key={idx}
                             id={idx+1}
