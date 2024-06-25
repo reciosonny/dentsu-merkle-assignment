@@ -9,8 +9,6 @@ body {
     background: #171717;
     color: #fff;
     @include respond($breakpoint-desktop) {
-        // background-color: green;
-        // color: #fff;
         margin: 0 180px 200px 180px;
     }
     @include respond-max($breakpoint-mobile) {
@@ -41,15 +39,6 @@ h1, p {
         flex-direction: row;
     }
 }
-
-// h1 {
-//     font-family: 'Anton', sans-serif;
-// }
-
-// span {
-//     font-family: 'Source Serif 4', serif;
-//     // font-family: 'Reddit Mono', monospace;
-// }
 
 .logo {
     font-family: 'Roboto Slab', serif;

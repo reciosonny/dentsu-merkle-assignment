@@ -1,8 +1,11 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Hacker News Awesome
+
+This repository is a user interface (UI) portal for Hacker News, a popular website for sharing and discussing computer science and entrepreneurship news. This UI provides a clean and potentially customizable way to interact with Hacker News content.
 
 ## Getting Started
 
-First, run the development server:
+Use the following commands to run the code on the development server:
 
 ```bash
 npm run dev
@@ -18,19 +21,24 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Deployment and Vercel
 
-## Learn More
+To deploy the application to a live environment, you can use a platform like Vercel. Here's a general guide for deployment on Vercel:
 
-To learn more about Next.js, take a look at the following resources:
+### Create a Vercel account
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+If you don't have a Vercel account, create one at https://vercel.com/.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Connect your repository
 
-## Deploy on Vercel
+Connect your GitHub repository to your Vercel account. Vercel will guide you through this process.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Build and deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Vercel will typically handle building and deploying your application based on the configuration in your repository. You might need to configure a build command in your package.json file (check Vercel documentation for details).
+
+To deploy in prod, you just need to push the changes into `main` branch. Once done, it will reflect to [https://hackernews-reciosonny.vercel.app/](https://hackernews-reciosonny.vercel.app/) in just a few seconds!
+
+### Accessing the deployed application
+
+Once deployed, Vercel will provide you with a URL to access your live Hacker News UI portal.
