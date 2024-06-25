@@ -1,0 +1,76 @@
+.featured-article {
+    position: relative;
+
+    @include respond($breakpoint-desktop) {
+        margin-top: 200px;
+        margin-right: 6em;
+    }
+
+    @include respond-max($breakpoint-mobile) {
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            border-bottom: 1px solid #2e2e2e;
+            width: 100%;
+            bottom: -16px;
+        }
+    }
+
+    h1 {
+        font-family: "Anton", sans-serif;
+        font-size: 40px;
+        // margin-bottom: 20px;
+    }
+
+    &__content {
+        @include respond($breakpoint-desktop) {
+            margin-left: 10em;
+        }
+    }
+    
+    &__img {
+        position: absolute;
+        z-index: -999;
+        
+        @include respond($breakpoint-desktop) {
+            top: -20em;
+            width: 700px;
+            height: 450px;
+        }
+
+        @include respond-max($breakpoint-mobile) {
+            top: -10em;
+            height: 300px;
+            margin-left: 60px;
+        }
+
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    &__origin {
+        font-family: "Source Serif 4", serif;
+        font-size: 14px;
+        color: #8d8d8d;
+    }
+
+    &__desc {
+        font-family: "Source Serif 4", serif;
+        margin-top: 10px;
+    }
+}

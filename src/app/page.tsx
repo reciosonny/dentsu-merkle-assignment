@@ -1,13 +1,38 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import TopArticle from "@/app/components/TopArticle";
+import Article from "@/app/components/Article";
+import FeaturedArticle from "./components/FeaturedArticle";
+import { IArticle } from "./types/IArticle";
+import { hackerNewsAPI } from "./services/hackerNewsService";
 
-export default function Home() {
+export default async function Home() {
+    const data = await hackerNewsAPI();
+
+    const featuredArticle: IArticle = data[0];
+
     return (
-        <main>
-            <TopArticle />
-            <h1>What Game of Thrones did to the media?</h1>
-            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, quidem a! Voluptatibus ipsam corporis quasi sequi doloremque. Excepturi aperiam possimus in sed dolore, nostrum officia eligendi dicta odit voluptatem obcaecati.</span>
+        <main className="home">
+            {/* TODO: Top article is displayed here */}
+            <FeaturedArticle {...featuredArticle} id={0} />
+
+            {/* List of articles go here. */}
+            <div className="article-container">
+                <h1>Top Stories</h1>
+
+                <div className="article-content">
+                    {data.slice(1).map((i, idx) => (
+                        <Article
+                            key={idx}
+                            id={idx+1}
+                            title={i.title}
+                            desc="The HBO’s fantasy series provided a boon in web traffic. But what happened when every publication started chasing the same thing?"
+                            image={i.image}
+                            score={i.score}
+                            timestamp={i.timestamp}
+                            url={i.url}
+                            author={i.author}
+                        />
+                    ))}
+                </div>
+            </div>
         </main>
     );
 }

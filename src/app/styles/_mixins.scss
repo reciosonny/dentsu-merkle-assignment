@@ -1,4 +1,4 @@
-$breakpoint-mobile: 320px;
+$breakpoint-mobile: 432px;
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1200px;
 
@@ -7,10 +7,12 @@ $breakpoint-desktop: 1200px;
         @media (min-width: #{$breakpoint}) {
             @content;
         }
-    } @else {
-        @media (max-width: #{$breakpoint - 0.02px}) {
-            // Account for fractional widths
-            @content;
-        }
+    }
+}
+
+@mixin respond-max($breakpoint) {
+    @media (max-width: #{$breakpoint - 0.02px}) {
+        // Account for fractional widths
+        @content;
     }
 }
