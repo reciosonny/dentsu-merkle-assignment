@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import "./styles/style.scss";
 
 export const metadata: Metadata = {
-    title: "Hacker News By Sonny recio",
+    title: "Hacker News By Sonny Recio",
     description: "Awesome Hacker news",
 };
 
