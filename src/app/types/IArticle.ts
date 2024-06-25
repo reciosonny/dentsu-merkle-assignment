@@ -4,7 +4,7 @@ import { IAuthor } from "./IAuthor";
 export type IArticle = {
     id: number;
     title: string;
-    desc: string;
+    desc?: string;
     url: string;
     timestamp: string;
     score: number;

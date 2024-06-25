@@ -23,7 +23,6 @@ export default async function Home() {
                             key={idx}
                             id={idx+1}
                             title={i.title}
-                            desc="The HBO’s fantasy series provided a boon in web traffic. But what happened when every publication started chasing the same thing?"
                             image={i.image}
                             score={i.score}
                             timestamp={i.timestamp}
